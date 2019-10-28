@@ -112,11 +112,11 @@ public class SettingsFragment extends BasePreferenceFragmentCompat implements Bi
 
 
         //COMPILE INSTRUCTIONS: Comment out the following block
-        //Start
+        /*** //Start
         bp = new BillingProcessor(Objects.requireNonNull(getContext()), getResources().getString(R.string.license_key), this);
         bp.loadOwnedPurchasesFromGoogle();
         bp.initialize();
-        //End
+        //End ***/
 
         Log.d("PREFERENCES", rootKey + " ");
         if (rootKey == null){
@@ -153,7 +153,7 @@ public class SettingsFragment extends BasePreferenceFragmentCompat implements Bi
                getPreferenceScreen().findPreference("pref_advanced_purchase").setSummary(R.string.settingsAdvancedPurchasedSummary);
             }
             //COMPILE INSTRUCTIONS: comment out the following code block
-            //Start
+            /*** //Start
             ConsentInformation consentInformation = ConsentInformation.getInstance(getContext());
             String[] publisherIds = {getContext().getResources().getString(R.string.admob_publisher_id)};
             consentInformation.requestConsentInfoUpdate(publisherIds, new ConsentInfoUpdateListener() {
@@ -180,14 +180,14 @@ public class SettingsFragment extends BasePreferenceFragmentCompat implements Bi
                     // User's consent status failed to update.
                 }
             });
-            //End
+            //End ***/
 
 
             final Preference advancedPurchasePref = this.findPreference("pref_advanced_purchase");
             advancedPurchasePref.setOnPreferenceClickListener(preference -> {
                 //COMPILE INSTRUCTIONS: comment out the following line and uncomment the one below it
-                bp.purchase(getActivity(), "go_to_sleep_advanced");
-                //advancedPurchased(sharedPreferences, getPreferenceScreen());
+                //*** bp.purchase(getActivity(), "go_to_sleep_advanced");
+                advancedPurchased(sharedPreferences, getPreferenceScreen());
 
 
 
@@ -606,7 +606,7 @@ public class SettingsFragment extends BasePreferenceFragmentCompat implements Bi
     public void onResume(){
         Log.d("settings", "onResume called!");
         //COMPILE INSTRUCTIONS: comment out the following line
-        bp.loadOwnedPurchasesFromGoogle();
+        //*** bp.loadOwnedPurchasesFromGoogle();
 
         if (rootKey == null){
             ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle(getString(R.string.settings));

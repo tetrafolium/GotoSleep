@@ -203,6 +203,7 @@
         app:layout_constraintStart_toStartOf="parent"/>
 
     <!--COMPILE INSTRUCTION: delete the entire AdView element below -->
+    <!--
     <com.google.android.gms.ads.AdView
         xmlns:ads="http://schemas.android.com/apk/res-auto"
         android:id="@+id/adView"
@@ -216,6 +217,7 @@
         ads:layout_constraintBottom_toTopOf="@+id/aboutButton"
         ads:layout_constraintEnd_toEndOf="parent"
         ads:layout_constraintStart_toStartOf="parent"/>
+    -->
 
     <!-- #TODO make a frameLayout here, create code that inflates the native_dialog_prompt -->
     <FrameLayout
@@ -226,7 +228,6 @@
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:animateLayoutChanges="true"
-        app:layout_constraintBottom_toTopOf="@+id/adView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enableSleepModeButton">
